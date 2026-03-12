@@ -71,7 +71,7 @@ int main() {
     // 8. Close the connection and clean up (closesocket instead of close)
     closesocket(new_socket);
     closesocket(server_fd);
-    WSACleanup(); // Shut down the Windows networking subsystem
+    WSACleanup(); // Shut down the Windows networking subsystem.
 
     return 0;
 }
