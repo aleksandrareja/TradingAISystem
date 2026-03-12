@@ -1,0 +1,52 @@
+# ==========================================
+# 1. Środowisko CLion / JetBrains
+# ==========================================
+.idea/
+cmake-build-*/
+*.iws
+*.workspace
+
+# ==========================================
+# 2. Pliki konfiguracyjne i tymczasowe CMake
+# ==========================================
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# ==========================================
+# 3. Pliki wynikowe kompilacji C/C++
+# ==========================================
+# Pliki obiektowe
+*.o
+*.obj
+
+# Biblioteki statyczne i dynamiczne
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Pliki wykonywalne
+*.exe
+*.out
+*.app
+
+# Pliki debugowania (Windows/MSVC)
+*.pdb
+*.ilk
+*.idb
+
+# ==========================================
+# 4. Pliki systemowe (Windows / macOS)
+# ==========================================
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+.DS_Store
