@@ -9,6 +9,8 @@
 Portfolio::Portfolio(double initial_cash) : cash_balance(initial_cash) {}
 
 bool Portfolio::executeOrder(const Order& order) {
+    std::lock_guard<std::mutex> lock(mtx);
+
     double total_value = order.quantity * order.price;
 
     if (order.type == OrderType::BUY) {
@@ -46,6 +48,8 @@ double Portfolio::calculateTotalValue(const std::unordered_map<std::string, doub
 }
 
 void Portfolio::printStatus(const std::unordered_map<std::string, double>& current_prices) const {
+    std::lock_guard<std::mutex> lock(mtx);
+
     std::cout << "\n--- STATUS PORTFELA ---\n";
     std::cout << "Gotowka: $" << std::fixed << std::setprecision(2) << cash_balance << "\n";
     for (const auto& [symbol, quantity] : holdings) {

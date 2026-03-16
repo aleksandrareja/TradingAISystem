@@ -9,12 +9,14 @@
 
 #include <string>
 #include <unordered_map>
+#include <mutex>
 #include "Order.h"
 
 class Portfolio {
 private:
     double cash_balance;
     std::unordered_map<std::string, double> holdings;
+    mutable std::mutex mtx;
 
 public:
     explicit Portfolio(double initial_cash);
